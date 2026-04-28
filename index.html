@@ -233,6 +233,125 @@
   }
   }
 
+
+  /* CONTACT FORM */
+  .contact-wrap {
+    max-width: 700px;
+    width: 100%;
+  }
+  .contact-form-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px;
+  }
+  .contact-form-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+  .contact-form-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .form-group input,
+  .form-group textarea {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(79,142,247,0.12);
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #454d66;
+  }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+  }
+  .form-submit {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, #4f8ef7, #a855f7);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: opacity 0.2s, transform 0.15s;
+    margin-top: 8px;
+  }
+  .form-submit:hover { opacity: 0.9; transform: translateY(-2px); }
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 24px;
+    background: rgba(56,217,169,0.1);
+    border: 1px solid rgba(56,217,169,0.3);
+    border-radius: 12px;
+    color: var(--accent2);
+    font-weight: 600;
+    margin-top: 16px;
+    font-size: 0.95rem;
+  }
+  .contact-yt-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    padding: 14px 20px;
+    background: rgba(255,0,0,0.08);
+    border: 1px solid rgba(255,60,60,0.25);
+    border-radius: 12px;
+    color: #ff6666;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .contact-yt-link:hover { background: rgba(255,0,0,0.15); }
+  @media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form-card { padding: 28px 20px; }
+  }
+
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
   @media (max-width: 900px) {
@@ -294,18 +413,6 @@
   <div class="section-title">A Bit About Me</div>
   <div class="about-grid">
     <div>
-      <div class="about-card">
-        <h3>Contact</h3>
-        <ul class="contact-list">
-          <li><span>📱</span><span>+91-7498091796</span></li>
-          <li><span>✉️</span><span>shanezyan@gmail.com</span></li>
-          <li><span>📍</span><span>Mumbai, India</span></li>
-        </ul>
-      </div>
-      <div class="about-card">
-        <h3>Total Experience</h3>
-        <div class="stat-row" style="margin-bottom:16px;">
-          <div class="stat"><div class="stat-num">11+</div><div class="stat-label">Total Years</div></div>
         </div>
         <div class="exp-split">
           <div class="exp-pill it">💻 5 Yrs — IT Support</div>
@@ -565,22 +672,63 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="contact-box">
-    <h2>Let's Connect</h2>
-    <p>Open to new opportunities, collaborations, and conversations. Feel free to reach out anytime.</p>
-    <div class="contact-info-row">
-      <a class="contact-pill" href="mailto:shanezyan@gmail.com">✉️ shanezyan@gmail.com</a>
-      <a class="contact-pill" href="tel:+917498091796">📱 +91-7498091796</a>
-      <a class="contact-pill" href="https://youtube.com/@ahlehadees_hind" target="_blank" style="border-color:rgba(255,60,60,0.3);color:#ff6666;">▶ YouTube</a>
-      <span class="contact-pill">📍 Mumbai, India</span>
+<section id="contact" style="display:flex;flex-direction:column;align-items:center;">
+  <div class="contact-wrap">
+    <div class="section-label" style="text-align:center;">Get In Touch</div>
+    <div class="contact-form-card">
+      <h2>Let's Connect 👋</h2>
+      <p>I'm open to new opportunities, collaborations, and conversations. Fill in the form below and I'll get back to you as soon as possible.</p>
+
+      <form action="https://formspree.io/f/xlgayzno" method="POST" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="_replyto" value="" />
+        <input type="hidden" name="_subject" value="New message from your Portfolio!" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" name="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" name="email" placeholder="john@example.com" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" name="company" placeholder="Your company name" />
+          </div>
+          <div class="form-group">
+            <label>Subject *</label>
+            <input type="text" name="subject" placeholder="Job opportunity / Freelance / Other" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea name="message" placeholder="Tell me about your project, opportunity, or just say hello..." required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Send Message ✉️</button>
+
+        <div class="form-success" id="formSuccess">
+          ✅ Thank you! Your message has been sent. I'll get back to you soon, In Sha Allah!
+        </div>
+      </form>
+
+      <a href="https://youtube.com/@ahlehadees_hind" target="_blank" class="contact-yt-link">
+        ▶ Also check out my YouTube Channel — AHLE HADEES HIND &nbsp;·&nbsp; 1.42L Subscribers
+      </a>
     </div>
   </div>
 </section>
 
+
 <footer>
   <p>© 2026 <span>Ismail Mohideen Shaikh</span> · IT Specialist · Content Creator · Mumbai, India</p>
 </footer>
+
 
 <script>
   function showTab(tab, btn) {
@@ -589,6 +737,33 @@
     document.getElementById('tab-' + tab).classList.add('active');
     btn.classList.add('active');
   }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        document.getElementById('formSuccess').style.display = 'block';
+        btn.textContent = 'Message Sent ✅';
+      } else {
+        btn.textContent = 'Error. Try again.';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Error. Try again.';
+      btn.disabled = false;
+    }
+  }
 </script>
+
 </body>
 </html>
